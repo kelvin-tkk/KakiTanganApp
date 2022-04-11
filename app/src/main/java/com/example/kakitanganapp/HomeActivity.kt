@@ -27,10 +27,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        toolbar = findViewById(R.id.tlbHome)
+        toolbar = findViewById(R.id.toolbarHome)
         drawer = findViewById(R.id.drawer_layout)
-        val navigationview : NavigationView = findViewById(R.id.nav_view)
-        navigationview.setNavigationItemSelectedListener(this)
+        val navigationView : NavigationView = findViewById(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener(this)
         val toggle : ActionBarDrawerToggle = ActionBarDrawerToggle(
             this,
             drawer,
@@ -56,7 +56,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
                 startActivity(
                     Intent(
                         this,
-                        ContactsContract.Profile::class.java
+                        UserProfile::class.java
                     )
                 )
             }
@@ -66,6 +66,14 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
 
     override fun onClick(v: View?) {
         when(v?.id){
+            R.id.btnBookNow -> {
+                startActivity(
+                    Intent(
+                        this,
+                        Service::class.java
+                    )
+                )
+            }
             R.id.cvLogout -> {
                 finish()
             }
