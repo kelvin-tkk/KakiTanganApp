@@ -10,6 +10,8 @@ import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.TimePicker
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
@@ -53,9 +55,10 @@ class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener
             DateFormat.is24HourFormat(this))
         timePickerDialog.show()
     }
+
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         myHour = hourOfDay
         myMinute = minute
-        textView.text = "Year: " + myYear + "\n" + "Month: " + myMonth + "\n" + "Day: " + myDay + "\n" + "Hour: " + myHour + "\n" + "Minute: " + myMinute
+        textView.text = "Confirmation Date and Time:" + myDay + "/" + myMonth + "/" + myYear + " " + myHour + ":" + myMinute
     }
 }
