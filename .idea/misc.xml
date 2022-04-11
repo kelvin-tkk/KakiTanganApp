@@ -5,12 +5,14 @@
       <map>
         <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/drawable/button.xml" value="0.2703125" />
         <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/drawable/edit_text.xml" value="0.2703125" />
+        <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/drawable/homebutton.xml" value="0.2703125" />
         <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/font/roboto.xml" value="0.284375" />
-        <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/layout/activity_home.xml" value="0.136" />
         <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/layout/activity_profile_edit.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/layout/activity_user_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/layout/activity_user_profile.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/UniCollegeWork/Bachelor/RSDY2S3/MobileApp/KakiTanganApp/app/src/main/res/layout/activity_user_register.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
