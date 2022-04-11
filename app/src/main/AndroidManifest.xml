@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KakiTanganApp">
         <activity
+            android:name=".ProfileEdit"
+            android:exported="false"
+            android:label="@string/title_activity_profile_edit"
+            android:theme="@style/Theme.KakiTanganApp.NoActionBar" />
+        <activity
             android:name=".UserLogin"
             android:exported="false" />
         <activity
