@@ -7,24 +7,24 @@
     tools:context=".ProfileEdit">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tlbEditProfile"
+        android:id="@+id/ttlEditProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/teal_200"
         android:elevation="4dp"
         android:theme="@style/Theme.Assignment.AppBarOverlay"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:title="Edit Profile"
-        app:titleTextColor="@color/black"/>
+        app:titleTextColor="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/tlbEditProfile">
+        app:layout_constraintTop_toBottomOf="@+id/ttlEditProfile">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -34,38 +34,39 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/textViewNote"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginEnd="40dp"
                     android:fontFamily="@font/roboto"
                     android:justificationMode="inter_word"
-                    android:text="Leave it blank to use original data."
-                    android:textColor="@color/black"
+                    android:text="Enter your new details."
+                    android:textColor="@color/gray"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="30dp"
                     android:fontFamily="@font/roboto"
                     android:text="Full Name :"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textView13" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewNote" />
 
                 <EditText
-                    android:id="@+id/editEPFullName"
+                    android:id="@+id/editTextName"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:layout_marginTop="5dp"
@@ -77,34 +78,35 @@
                     android:textColorHint="#878787"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewName" />
 
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="30dp"
                     android:fontFamily="@font/roboto"
                     android:text="Gender :"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/editEPFullName" />
+                    app:layout_constraintTop_toBottomOf="@id/editTextName" />
 
                 <RadioGroup
-                    android:id="@+id/radGroupEPGender"
+                    android:id="@+id/radGroupGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginEnd="25dp"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6">
+                    app:layout_constraintTop_toBottomOf="@+id/editTextName">
 
                     <RadioButton
-                        android:id="@+id/radEPMale"
+                        android:id="@+id/radBtnMale"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
@@ -114,34 +116,34 @@
                         app:layout_constraintStart_toStartOf="parent"/>
 
                     <RadioButton
-                        android:id="@+id/radEPFemale"
+                        android:id="@+id/radBtnFemale"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="80dp"
+                        android:layout_marginStart="50dp"
                         android:fontFamily="@font/roboto"
                         android:text="Female"
                         android:buttonTint="@color/teal_700"
-                        app:layout_constraintStart_toEndOf="@id/radEPMale"/>
+                        app:layout_constraintStart_toEndOf="@id/radBtnMale"/>
 
                 </RadioGroup>
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/textViewPhoneNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="30dp"
                     android:fontFamily="@font/roboto"
                     android:text="Phone No. :"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/radGroupEPGender" />
+                    app:layout_constraintTop_toBottomOf="@id/radGroupGender" />
 
                 <EditText
-                    android:id="@+id/editEPPhoneNo"
+                    android:id="@+id/editTextPhoneNo"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:layout_marginTop="5dp"
@@ -153,23 +155,53 @@
                     android:textColorHint="#878787"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPhoneNo" />
+
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Phone No. :"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editTextPhoneNo" />
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#878787"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
                 <Button
                     android:id="@+id/btnEPSave"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="60dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="100dp"
                     android:background="@drawable/button"
                     android:fontFamily="@font/roboto"
                     android:text="Save"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editEPPhoneNo"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
