@@ -9,4 +9,26 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="state">
+        <item>Pulau Pinang</item>
+        <item>Putrajaya</item>
+        <item>Melaka</item>
+        <item>Johor</item>
+        <item>Pahang</item>
+        <item>Labuan</item>
+        <item>Kelantan</item>
+        <item>Sabah</item>
+        <item>Sarawak</item>
+        <item>Perlis</item>
+        <item>Kedah</item>
+        <item>Perak</item>
+        <item>Kuala Lumpur</item>
+        <item>Negeri Sembilan</item>
+        <item>Selangor</item>
+        <item>Terrengganu</item>
+    </string-array>
 </resources>
