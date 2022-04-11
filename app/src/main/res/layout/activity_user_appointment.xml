@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UserAppointment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tlbAppointment"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@android:color/white"
+        android:background="@color/dark_grey">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appointment"
+            android:textColor="@android:color/white"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_gravity="center"
+        />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/layout_bg"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlbAppointment">
+
+        <TextView
+            android:id="@+id/textView_booking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24sp"
+            android:layout_marginTop="14sp"
+            android:layout_marginEnd="24sp"
+            android:text="Do Your Booking"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnPick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24sp"
+            android:layout_marginTop="14sp"
+            android:layout_marginEnd="24sp"
+            android:backgroundTint="@color/grey"
+            android:drawableEnd="@drawable/ic_calendar"
+            android:text="Pick Date and TIme" />
+
+        <TextView
+            android:id="@+id/textView_datetime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24sp"
+            android:layout_marginTop="74sp"
+            android:layout_marginEnd="24sp"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+
+<!--        <Space         -->
+<!--            android:layout_width="match_parent"         -->
+<!--            android:layout_height="24mm"-->
+<!--            android:layout_marginStart="24sp"-->
+<!--            android:layout_marginTop="14sp"-->
+<!--            android:layout_marginEnd="24sp" />-->
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="94sp"
+            android:layout_marginTop="14sp"
+            android:layout_marginEnd="94sp"
+            android:backgroundTint="@color/black"
+            android:text="Next" />
+    </LinearLayout>
+
+</LinearLayout>
