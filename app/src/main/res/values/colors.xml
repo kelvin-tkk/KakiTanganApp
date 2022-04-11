@@ -10,4 +10,6 @@
     <color name="gray">#666666</color>
     <color name="light_blue">#4ad8ff</color>
     <color name="card_border">#33BBGG</color>
+    <color name="dark_grey">#38393b</color>
+    <color name="grey">#b4b3b3</color>
 </resources>

@@ -29,4 +29,10 @@
         <item name="android:fontFamily">@font/roboto</item>
         <item name="colorControlNormal">@color/teal_700</item>
     </style>
+
+    <style name="DrawerStyle">
+        <item name="android:textSize">18sp</item> <!-- menu item text size -->
+        <item name="android:listPreferredItemHeightSmall">60dp</item><!-- menu item height -->
+        <item name="fontFamily">@font/roboto</item>
+    </style>
 </resources>
