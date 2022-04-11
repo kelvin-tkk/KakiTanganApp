@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserRegister">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ttlUserRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:elevation="4dp"
+        android:theme="@style/Theme.Assignment.AppBarOverlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="User Registration"
+        app:titleTextColor="@color/white" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btnRegUser"
+        app:layout_constraintTop_toBottomOf="@+id/ttlUserRegister">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtRegPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Phone Number :"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/editRegPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#878787"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegPhone" />
+
+                <TextView
+                    android:id="@+id/txtRegName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Name :"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editRegPhone" />
+
+                <EditText
+                    android:id="@+id/editRegName"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#878787"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegName" />
+
+                <TextView
+                    android:id="@+id/txtRegGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Gender :"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editRegName" />
+
+                <RadioGroup
+                    android:id="@+id/radGroupGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegGender">
+
+                    <RadioButton
+                        android:id="@+id/radMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/teal_700"
+                        android:checked="true"
+                        android:fontFamily="@font/roboto"
+                        android:text="Male"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/radFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="80dp"
+                        android:buttonTint="@color/teal_700"
+                        android:fontFamily="@font/roboto"
+                        android:text="Female"
+                        app:layout_constraintStart_toEndOf="@id/radMale" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/txtRegPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Password :"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/radGroupGender" />
+
+                <EditText
+                    android:id="@+id/editRegPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#878787"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegPassword" />
+
+                <TextView
+                    android:id="@+id/txtRegConPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Confirm Password :"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editRegPassword" />
+
+                <EditText
+                    android:id="@+id/editRegConPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#878787"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegConPassword" />
+
+                <TextView
+                    android:id="@+id/txtRegEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Email :"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editRegConPassword" />
+
+                <EditText
+                    android:id="@+id/editRegEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#878787"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegEmail" />
+
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="10dp"
+        android:text="Register"
+        android:textColor="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
