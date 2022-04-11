@@ -20,7 +20,6 @@
         app:titleTextColor="@color/white" />
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -32,30 +31,44 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/RegimageView"
+                    android:layout_width="179dp"
+                    android:layout_height="205dp"
+                    android:layout_marginBottom="300dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.456"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.124"
+                    tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
                     android:id="@+id/txtRegPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto"
-                    android:text="Phone Number :"
+                    android:text="Phone :"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/RegimageView" />
 
                 <EditText
                     android:id="@+id/editRegPhone"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
                     android:background="@drawable/edit_text"
                     android:ems="10"
                     android:inputType="text"
@@ -70,8 +83,8 @@
                     android:id="@+id/txtRegName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto"
                     android:text="Name :"
                     android:textColor="@color/black"
@@ -84,8 +97,8 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
                     android:background="@drawable/edit_text"
                     android:ems="10"
                     android:inputType="text"
@@ -100,8 +113,8 @@
                     android:id="@+id/txtRegGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto"
                     android:text="Gender :"
                     android:textColor="@color/black"
@@ -116,8 +129,8 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:orientation="horizontal"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtRegGender">
 
                     <RadioButton
@@ -146,8 +159,8 @@
                     android:id="@+id/txtRegPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto"
                     android:text="Password :"
                     android:textColor="@color/black"
@@ -160,8 +173,8 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
                     android:background="@drawable/edit_text"
                     android:ems="10"
                     android:inputType="textPassword"
@@ -176,8 +189,8 @@
                     android:id="@+id/txtRegConPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto"
                     android:text="Confirm Password :"
                     android:textColor="@color/black"
@@ -190,8 +203,8 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
                     android:background="@drawable/edit_text"
                     android:ems="10"
                     android:inputType="textPassword"
@@ -206,8 +219,8 @@
                     android:id="@+id/txtRegEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto"
                     android:text="Email :"
                     android:textColor="@color/black"
@@ -220,27 +233,26 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
                     android:background="@drawable/edit_text"
                     android:ems="10"
                     android:inputType="textPassword"
                     android:padding="8dp"
                     android:textColor="@color/black"
                     android:textColorHint="#878787"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtRegEmail" />
-
-
-
-
-
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegEmail"
+                    app:layout_constraintVertical_bias="1.0" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </LinearLayout>
+
 
     <Button
         android:id="@+id/btnRegUser"
@@ -255,6 +267,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
