@@ -3,17 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/KakiTanganApp/app/src/main/res/drawable/button.xml" value="0.2703125" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/KakiTanganApp/app/src/main/res/drawable/custom_input.xml" value="0.2703125" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/KakiTanganApp/app/src/main/res/drawable/ic_calendar.xml" value="0.2703125" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_profile_edit.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_user_appointment.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_user_register.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_main.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_service.xml" value="0.23308270676691728" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_user_login.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_user_profile.xml" value="0.1644021739130435" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_user_register.xml" value="0.4157014157014157" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_user_register.xml" value="0.4" />
       </map>
     </option>
   </component>

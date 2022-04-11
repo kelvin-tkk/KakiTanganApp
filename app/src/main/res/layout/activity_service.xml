@@ -19,29 +19,29 @@
         app:title="Our Service"
         app:titleTextColor="@color/white" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Normal Clean"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="186dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ttlService">
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Deep Clean"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="269dp" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
-    </LinearLayout>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Disinfection"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="359dp" />
 
 
 
