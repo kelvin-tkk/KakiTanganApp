@@ -2,6 +2,7 @@ package com.example.kakitanganapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 
 class ProfileEdit : AppCompatActivity() {
@@ -16,5 +17,12 @@ class ProfileEdit : AppCompatActivity() {
         setSupportActionBar(ttlProfileEdit)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         //
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
