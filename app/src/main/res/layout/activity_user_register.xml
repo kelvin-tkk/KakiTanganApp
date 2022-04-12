@@ -259,7 +259,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/editRegAddress" />
 
-                <EditText
+                <EditText/>
                     android:id="@+id/editRegPhone"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
