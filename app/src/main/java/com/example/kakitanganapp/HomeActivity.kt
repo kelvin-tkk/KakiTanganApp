@@ -65,6 +65,9 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
                     )
                 )
             }
+            R.id.nav_home -> {
+                drawer.closeDrawer(GravityCompat.START)
+            }
         }
         return true
     }

@@ -14,14 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KakiTanganApp">
         <activity
-            android:name=".BookingHistory"
+            android:name=".OrderHistoryDetail"
             android:exported="false" />
+        <activity
+            android:name=".BookingHistory"
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".MaidList"
             android:exported="false" />
         <activity
             android:name=".Service"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
@@ -38,6 +42,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

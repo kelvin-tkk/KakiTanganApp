@@ -16,7 +16,7 @@ tools:context=".MaidList">
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    app:title="Our Maids"
+    app:title="Choose a Maid"
     app:titleTextColor="@color/white" />
 
 <LinearLayout
