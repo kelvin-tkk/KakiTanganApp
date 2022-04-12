@@ -13,6 +13,7 @@ class Service : AppCompatActivity() {
     private lateinit var ttlService : Toolbar
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+    val dateTime = intent.getStringExtra("DATETIME")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class Service : AppCompatActivity() {
         adapter = RecyclerAdapter(this)
         recyclerView.adapter = adapter
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
