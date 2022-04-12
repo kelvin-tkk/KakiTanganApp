@@ -5,24 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
-import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
-import androidx.appcompat.widget.Toolbar
-import com.example.kakitanganapp.databinding.ActivityUserRegisterBinding
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioGroup
+import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
-class UserRegister : AppCompatActivity() {
+class AccRegister : AppCompatActivity() {
 
-    private lateinit var binding: ActivityUserRegisterBinding
-    private lateinit var db: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
 
     private lateinit var editRegEmail: EditText
@@ -34,16 +31,9 @@ class UserRegister : AppCompatActivity() {
     private lateinit var editRegAddress: EditText
     private lateinit var btnRegUser: Button
 
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityUserRegisterBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        db = FirebaseFirestore.getInstance()        //singleton
+        setContentView(R.layout.activity_acc_register)
 
         auth = Firebase.auth
         var newUser = auth.currentUser

@@ -14,12 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KakiTanganApp">
         <activity
+            android:name=".AccRegister"
+            android:exported="false" />
+        <activity
             android:name=".OrderHistoryDetail"
             android:exported="false" />
         <activity
             android:name=".BookingHistory"
-            android:exported="true" >
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MaidList"
             android:exported="false" />
@@ -42,7 +44,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
