@@ -1,10 +1,10 @@
 package com.example.kakitanganapp
 
 data class User(
-    val email: String = "",
-    val phoneNum: String = "",
-    val name: String = "",
-    val gender: String = "",
-    val address: String = "",
-    val password: String = ""
+    var email: String = "",
+    var phoneNum: String = "",
+    var name: String = "",
+    var gender: String = "",
+    var address: String = "",
+    var password: String = ""
 )

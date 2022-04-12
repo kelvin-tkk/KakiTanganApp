@@ -13,23 +13,31 @@ import android.os.Looper
 import android.provider.ContactsContract
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
 import android.provider.Settings
+import android.text.TextUtils
 import android.util.Log
-import android.widget.EditText
+import android.widget.*
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 import java.util.*
+import java.util.regex.Pattern
 
 
 class ProfileEdit : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var auth:FirebaseAuth
+    private lateinit var userRef: DatabaseReference
+    private lateinit var currUser: User
 
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     private lateinit var locationCallback: LocationCallback
@@ -41,6 +49,9 @@ class ProfileEdit : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnGetLocation : Button
     private lateinit var ttlProfileEdit : Toolbar
     private lateinit var editTextAddress: EditText
+    private lateinit var editTextName : EditText
+    private lateinit var editTextPhoneNo : EditText
+    private lateinit var editRadGroupGender: RadioGroup
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,10 +68,43 @@ class ProfileEdit : AppCompatActivity(), View.OnClickListener {
         btnEPSave.setOnClickListener(this)
 
         editTextAddress = findViewById(R.id.editTextAddress)
+        editTextName = findViewById(R.id.editTextName)
+        editTextPhoneNo = findViewById(R.id.editTextPhoneNo)
+        editRadGroupGender = findViewById(R.id.editRadGroupGender)
 
         // initialize fused location client
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
+        auth = FirebaseAuth.getInstance()
+        var sessionUser = auth.currentUser
+        if(sessionUser == null){
+            startActivity(Intent(this,UserLogin::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK))
+            finish()
+        }
+
+        userRef = Firebase.database.reference.child("User").child(auth.uid.toString())
+        userRef.get().addOnSuccessListener {
+            currUser = it.getValue<User>()!!
+            editTextName.setText(currUser.name)
+            when(currUser.gender){
+                "Male" -> editRadGroupGender.check(R.id.radBtnMale)
+                "Female" -> editRadGroupGender.check(R.id.radBtnFemale)
+            }
+            editTextPhoneNo.setText(currUser.phoneNum)
+            editTextAddress.setText(currUser.address)
+
+        }.addOnFailureListener{
+            Toast.makeText(
+                this,"Unexpected Error occured",
+                Toast.LENGTH_LONG
+            ).show()
+            startActivity(
+                Intent(
+                    this,UserLogin::class.java
+                ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+            finish()
+        }
     }
 
     override fun onClick(view: View?) {
@@ -69,13 +113,38 @@ class ProfileEdit : AppCompatActivity(), View.OnClickListener {
                 getLocation()
             }
             R.id.btnEPSave->{
-                //If successful
-                Toast.makeText(
-                    this,
-                    "Success saved changes",
-                    Toast.LENGTH_LONG
-                ).show()
-                finish();
+                val userName = editTextName.text.toString().trim()
+                val userPhone = editTextPhoneNo.text.toString().trim()
+                val userAddress = editTextAddress.text.toString().trim()
+                val phoneFormat = Pattern.compile ("^(01)(([02-46-9]-*[0-9]{7,7})|([1]-*[0-9]{8,8}))\$")
+                val format = phoneFormat.matcher(userPhone)
+                lateinit var userGender: String
+                when(editRadGroupGender.checkedRadioButtonId){
+                    R.id.radBtnFemale -> userGender = "Female"
+                    R.id.radBtnMale -> userGender = "Male"
+                }
+
+                currUser.gender = userGender
+                if(!TextUtils.isEmpty(userName))
+                    currUser.name = userName
+                if(!TextUtils.isEmpty(userAddress))
+                    currUser.address = userAddress
+                if(!TextUtils.isEmpty(userPhone)) {
+                    if (!format.matches()) {
+                        editTextPhoneNo.error = "Invalid phone number format"
+                        editTextPhoneNo.requestFocus()
+                        return
+                    } else
+                        currUser.phoneNum = userPhone
+                }
+                userRef.setValue(currUser).addOnSuccessListener {
+                    Toast.makeText(this,"Changes has been updated",Toast.LENGTH_LONG).show()
+                    finish();
+                }.addOnFailureListener{
+                    Toast.makeText(
+                        this,"Something unexpected had occured, changes was not saveed", Toast.LENGTH_LONG).show()
+
+                }
             }
         }
     }
