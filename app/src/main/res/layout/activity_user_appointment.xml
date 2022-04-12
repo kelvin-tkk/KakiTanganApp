@@ -74,13 +74,6 @@
             android:textStyle="bold"
             android:gravity="center" />
 
-<!--        <Space         -->
-<!--            android:layout_width="match_parent"         -->
-<!--            android:layout_height="24mm"-->
-<!--            android:layout_marginStart="24sp"-->
-<!--            android:layout_marginTop="14sp"-->
-<!--            android:layout_marginEnd="24sp" />-->
-
         <Button
             android:id="@+id/button_next"
             android:layout_width="match_parent"

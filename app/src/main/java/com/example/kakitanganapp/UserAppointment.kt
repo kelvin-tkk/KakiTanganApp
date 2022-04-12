@@ -2,10 +2,12 @@ package com.example.kakitanganapp
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.DateFormat
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
@@ -17,6 +19,7 @@ class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener
     TimePickerDialog.OnTimeSetListener {
     lateinit var textView: TextView
     lateinit var button: Button
+    lateinit var buttonNext: Button
     var day = 0
     var month: Int = 0
     var year: Int = 0
@@ -27,12 +30,14 @@ class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener
     var myYear: Int = 0
     var myHour: Int = 0
     var myMinute: Int = 0
+    private lateinit var textViewDateTime : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_appointment)
         textView = findViewById(R.id.textView_datetime)
         button = findViewById(R.id.btnPick)
+        buttonNext = findViewById(R.id.button_next)
         button.setOnClickListener {
             val calendar: Calendar = Calendar.getInstance()
             day = calendar.get(Calendar.DAY_OF_MONTH)
@@ -41,6 +46,13 @@ class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener
             val datePickerDialog =
                 DatePickerDialog(this@UserAppointment, this@UserAppointment, year, month, day)
             datePickerDialog.show()
+        }
+        buttonNext.setOnClickListener {
+            textViewDateTime = findViewById(R.id.textView_datetime)
+
+            val intent = Intent(this@UserAppointment,Service::class.java)
+            intent.putExtra("DATETIME", textViewDateTime.text)
+            startActivity(intent)
         }
     }
 
@@ -60,5 +72,12 @@ class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener
         myHour = hourOfDay
         myMinute = minute
         textView.text = "Confirmation*\n" + myDay + "/" + myMonth + "/" + myYear + " " + myHour + ":" + myMinute
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
