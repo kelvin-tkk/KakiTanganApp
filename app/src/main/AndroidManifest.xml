@@ -14,9 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KakiTanganApp">
         <activity
-            android:name=".Firestore"
-            android:exported="false" />
-        <activity
             android:name=".BookingHistory"
             android:exported="false" />
         <activity
@@ -24,7 +21,7 @@
             android:exported="false" />
         <activity
             android:name=".Service"
-            android:exported="false" />
+            android:exported="false"></activity>
         <activity
             android:name=".HomeActivity"
             android:exported="false" />

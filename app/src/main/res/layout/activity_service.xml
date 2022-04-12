@@ -19,30 +19,6 @@
         app:title="Our Service"
         app:titleTextColor="@color/white" />
 
-    <!--
-    <Button
-        android:id="@+id/button"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Normal Clean"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="186dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Deep Clean"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="269dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Disinfection"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="359dp" />
 -->
     <LinearLayout
         android:layout_width="match_parent"
