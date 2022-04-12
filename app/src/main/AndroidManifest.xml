@@ -12,6 +12,13 @@
         <activity
             android:name=".OurMaid"
             android:exported="false" />
+        <activity android:name=".UserAppointment" android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
@@ -19,11 +26,7 @@
             android:name=".ProfileEdit"
             android:exported="true"
             android:label="@string/title_activity_profile_edit">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".UserLogin"
