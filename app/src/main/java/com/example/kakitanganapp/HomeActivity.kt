@@ -18,12 +18,14 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
+import com.google.firebase.auth.FirebaseAuth
 
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.OnNavigationItemSelectedListener {
     private lateinit var toolbar: Toolbar
     private lateinit var drawer : DrawerLayout
     private lateinit var btnBookNow : Button
+    private lateinit var btnLogout : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
 
         btnBookNow = findViewById(R.id.btnBookNow)
         btnBookNow.setOnClickListener(this)
+        btnLogout = findViewById(R.id.btnLogout)
+        btnLogout.setOnClickListener(this)
 
         toolbar = findViewById(R.id.toolbarHome)
         drawer = findViewById(R.id.drawer_layout)
@@ -68,6 +72,14 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
             R.id.nav_home -> {
                 drawer.closeDrawer(GravityCompat.START)
             }
+            R.id.nav_booking_history -> {
+                startActivity(
+                    Intent(
+                        this,
+                        BookingHistory::class.java
+                    )
+                )
+            }
         }
         return true
     }
@@ -82,7 +94,24 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
                     )
                 )
             }
-            R.id.cvLogout -> {
+            R.id.btnLogout -> {
+                val sharedPref = getSharedPreferences("prefKey", Context.MODE_PRIVATE)
+                with(sharedPref.edit()) {
+                    putString("role", "")
+                    apply()
+                }
+                FirebaseAuth.getInstance().signOut()
+                Toast.makeText(
+                    this,
+                    "Logout successfully",
+                    Toast.LENGTH_LONG
+                ).show()
+                startActivity(
+                    Intent(
+                        this,
+                        UserLogin::class.java
+                    ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                )
                 finish()
             }
         }
