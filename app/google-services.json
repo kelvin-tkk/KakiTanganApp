@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "367311029015",
+    "project_id": "kakitangan-database",
+    "storage_bucket": "kakitangan-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367311029015:android:a614323059cf77b7642d52",
+        "android_client_info": {
+          "package_name": "com.example.kakitanganapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367311029015-crpj2kgim3bj4egjcr1ntkl14rh9eoi0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACGA__9KIJ9NtWhWH1rzZQPtpP6Pw0P00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367311029015-crpj2kgim3bj4egjcr1ntkl14rh9eoi0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
