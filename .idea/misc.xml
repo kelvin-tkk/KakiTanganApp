@@ -3,14 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_card_detail.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/drawable/ic_drop_down.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_booking_history.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_card_detail.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_confirm_payment.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_deep_clean.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_desinfection.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_main.xml" value="0.1621376811594203" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_normal_clean.xml" value="0.176" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_order_history_detail.xml" value="0.256140350877193" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_our_maid.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_payment.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_payment_detail1.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_payment_fail.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_payment_successful.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_profile_edit.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_service.xml" value="0.23308270676691728" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KakiTanganApp/app/src/main/res/layout/activity_user_appointment.xml" value="0.25" />
