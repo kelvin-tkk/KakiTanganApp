@@ -10,21 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KakiTanganApp">
         <activity
-            android:name=".OurMaid"
+            android:name=".MaidList"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileEdit"
-            android:exported="true"
-            android:label="@string/title_activity_profile_edit">
+            android:name=".Service"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".ProfileEdit"
+            android:exported="true"
+            android:label="@string/title_activity_profile_edit" />
         <activity
             android:name=".UserLogin"
             android:exported="false" />
