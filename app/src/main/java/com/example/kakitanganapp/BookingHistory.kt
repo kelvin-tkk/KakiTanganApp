@@ -28,7 +28,7 @@ class BookingHistory : AppCompatActivity() {
         )
 
         bookingIds = arrayOf(
-            "123","124","125"
+            "123","124","1256"
         )
 
         cleaningTypes = arrayOf(
