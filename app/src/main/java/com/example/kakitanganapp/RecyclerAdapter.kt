@@ -16,7 +16,7 @@ class RecyclerAdapter(val context: Context): RecyclerView.Adapter<RecyclerAdapte
 
     private var titles = arrayOf("Normal Clean","Deep Clean","Disinfection")
     private var details = arrayOf("RM 45/ hour","RM 75/ hour", "RM 70/ hour")
-    private val images = intArrayOf(R.drawable.cleaning_pic,R.drawable.cleaning_pic,R.drawable.cleaning_pic)
+    private val images = intArrayOf(R.drawable.normal_clean,R.drawable.deep_clean,R.drawable.disinfection)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {

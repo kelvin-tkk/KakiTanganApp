@@ -2,14 +2,20 @@ package com.example.kakitanganapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.view.View
+import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.sql.Date
 import java.time.LocalDate
 
-class BookingHistory : AppCompatActivity() {
+class BookingHistory : AppCompatActivity(){
 
-    private lateinit var newRecyclerView : RecyclerView
+    private lateinit var ttlHistory : Toolbar
     private lateinit var newArrayList : ArrayList<Bookings>
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<BookingAdapter.ViewHolder>? = null
     lateinit var maidImages : Array<Int>
     lateinit var bookingIds : Array<String>
     lateinit var cleaningTypes : Array<String>
@@ -19,35 +25,36 @@ class BookingHistory : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking_history)
 
+        ttlHistory = findViewById(R.id.ttlHistory)
+        setSupportActionBar(ttlHistory)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        // getting the recyclerview by its id
+        val recyclerview = findViewById<RecyclerView>(R.id.recyclerViewHistory)
 
-        maidImages = arrayOf(
-            R.drawable.habibi,
-            R.drawable.habibi,
-            R.drawable.habibi
-        )
+        // this creates a vertical layout Manager
+        recyclerview.layoutManager = LinearLayoutManager(this)
 
-        bookingIds = arrayOf(
-            "123","124","1256"
-        )
+        // ArrayList of class ItemsViewModel
+        val data = ArrayList<Bookings>()
 
-        cleaningTypes = arrayOf(
-            "Deep","Normal","Disinfection"
-        )
-
-        cleaningDates = arrayOf(
-            Date(222222222),
-            Date(2222222222),
-            Date(22222222222)
-        )
-    }
-
-    private fun getUserData(){
-        for(i in maidImages.indices){
-            val bookings = Bookings(maidImages[i],bookingIds[i],cleaningTypes[i],cleaningDates[i])
-            newArrayList.add(bookings)
+        // This loop will create 20 Views containing
+        // the image with the count of view
+        for (i in 1..5) {
+            data.add(Bookings(R.drawable.habibi, "Item ","bobo", Date(222222222) ))
         }
 
-        newRecyclerView.adapter = BookingAdapter(newArrayList)
+        // This will pass the ArrayList to our Adapter
+        val adapter = BookingAdapter(data)
+
+        // Setting the Adapter with the recyclerview
+        recyclerview.adapter = adapter
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
