@@ -78,7 +78,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
                 startActivity(
                     Intent(
                         this,
-                        Service::class.java
+                        UserAppointment::class.java
                     )
                 )
             }
