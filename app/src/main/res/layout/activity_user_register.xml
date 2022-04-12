@@ -50,20 +50,20 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/txtRegPhone"
+                    android:id="@+id/txtRegEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto"
-                    android:text="Phone :"
+                    android:text="Email :"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/RegimageView" />
 
                 <EditText
-                    android:id="@+id/editRegPhone"
+                    android:id="@+id/editRegEmail"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="25dp"
@@ -71,13 +71,13 @@
                     android:layout_marginEnd="25dp"
                     android:background="@drawable/edit_text"
                     android:ems="10"
-                    android:inputType="text"
+                    android:inputType="textEmailAddress"
                     android:padding="8dp"
                     android:textColor="@color/black"
                     android:textColorHint="#878787"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtRegPhone" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegEmail" />
 
                 <TextView
                     android:id="@+id/txtRegName"
@@ -90,7 +90,7 @@
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/editRegPhone" />
+                    app:layout_constraintTop_toBottomOf="@id/editRegEmail" />
 
                 <EditText
                     android:id="@+id/editRegName"
@@ -247,20 +247,20 @@
 
 
                 <TextView
-                    android:id="@+id/txtRegEmail"
+                    android:id="@+id/txtRegPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto"
-                    android:text="Email :"
+                    android:text="Phone :"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/editRegAddress" />
 
                 <EditText
-                    android:id="@+id/editRegEmail"
+                    android:id="@+id/editRegPhone"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="25dp"
@@ -268,7 +268,7 @@
                     android:layout_marginEnd="25dp"
                     android:background="@drawable/edit_text"
                     android:ems="10"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:padding="8dp"
                     android:textColor="@color/black"
                     android:textColorHint="#878787"
@@ -276,7 +276,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtRegEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegPhone"
                     app:layout_constraintVertical_bias="1.0" />
 
 
