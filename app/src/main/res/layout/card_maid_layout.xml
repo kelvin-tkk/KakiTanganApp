@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
+    android:id="@+id/card_maid_view"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="#81C784"
+    app:cardBackgroundColor="#81DDCC"
     app:cardCornerRadius="15dp"
     app:cardElevation="4dp"
     android:clickable="true"
@@ -15,34 +15,44 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout"
+        android:id="@+id/relativeMaidLayout"
         android:padding="16dp"
         >
         <ImageView
-            android:id="@+id/card_item_image"
+            android:id="@+id/card_maid_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             />
         <TextView
-            android:id="@+id/card_item_title"
+            android:id="@+id/card_maid_name"
             android:layout_width="250dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/card_item_image"
+            app:layout_constraintLeft_toRightOf="@id/card_maid_image"
             android:layout_marginStart="15dp"
             android:textSize="25sp"
             />
-        
+
+
         <TextView
-            android:id="@+id/card_item_detail"
+            android:id="@+id/card_maid_age"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/card_maid_name"
+            app:layout_constraintLeft_toRightOf="@id/card_maid_image"
+            />
+        <TextView
+            android:id="@+id/card_maid_detail"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/card_item_title"
-            app:layout_constraintLeft_toRightOf="@id/card_item_image"
+            app:layout_constraintTop_toBottomOf="@id/card_maid_age"
+            app:layout_constraintLeft_toRightOf="@id/card_maid_image"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

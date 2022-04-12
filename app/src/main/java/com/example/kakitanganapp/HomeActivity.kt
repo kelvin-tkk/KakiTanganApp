@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
@@ -22,10 +23,14 @@ import androidx.core.view.GravityCompat
 class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.OnNavigationItemSelectedListener {
     private lateinit var toolbar: Toolbar
     private lateinit var drawer : DrawerLayout
+    private lateinit var btnBookNow : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        btnBookNow = findViewById(R.id.btnBookNow)
+        btnBookNow.setOnClickListener(this)
 
         toolbar = findViewById(R.id.toolbarHome)
         drawer = findViewById(R.id.drawer_layout)
