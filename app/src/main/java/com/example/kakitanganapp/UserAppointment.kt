@@ -16,8 +16,8 @@ import com.google.firebase.auth.FirebaseAuth
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener,
-    TimePickerDialog.OnTimeSetListener {
+class UserAppointment : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
+    TimePickerDialog.OnTimeSetListener  {
     lateinit var textView: TextView
     lateinit var button: Button
     lateinit var buttonNext: Button
@@ -53,7 +53,7 @@ class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener
         buttonNext.setOnClickListener {
             textViewDateTime = findViewById(R.id.textView_datetime)
 
-            val intent = Intent(this@UserAppointment,Service::class.java)
+            val intent = Intent(this,Service::class.java)
             intent.putExtra("DATETIME", textViewDateTime.text)
             startActivity(intent)
         }

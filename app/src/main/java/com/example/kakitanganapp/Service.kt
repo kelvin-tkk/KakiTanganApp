@@ -10,15 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Service : AppCompatActivity() {
 
+    private lateinit var dateTimeVal : String
     private lateinit var ttlService : Toolbar
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
-    val dateTime = intent.getStringExtra("DATETIME")
-
+    //val dateTime = intent.getStringExtra("DATETIME")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service)
+
+        dateTimeVal = intent.getStringExtra("DATETIME").toString()
 
         ttlService = findViewById(R.id.ttlService)
         setSupportActionBar(ttlService)
