@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.TimePicker
+import com.google.firebase.auth.FirebaseAuth
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -35,6 +36,8 @@ class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_appointment)
+
+
         textView = findViewById(R.id.textView_datetime)
         button = findViewById(R.id.btnPick)
         buttonNext = findViewById(R.id.button_next)

@@ -22,10 +22,12 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.OnNavigationItemSelectedListener {
+
+    private lateinit var auth: FirebaseAuth
     private lateinit var toolbar: Toolbar
     private lateinit var drawer : DrawerLayout
     private lateinit var btnBookNow : Button
-    private lateinit var btnLogout : Button
+    private lateinit var btnLogout : CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +35,18 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
 
         btnBookNow = findViewById(R.id.btnBookNow)
         btnBookNow.setOnClickListener(this)
+
         btnLogout = findViewById(R.id.btnLogout)
         btnLogout.setOnClickListener(this)
+
+        auth = FirebaseAuth.getInstance()
+        var currentUser = auth.currentUser
+        if(currentUser ==null){
+            startActivity(
+                Intent(this,UserLogin::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+            finish()
+        }
 
         toolbar = findViewById(R.id.toolbarHome)
         drawer = findViewById(R.id.drawer_layout)
@@ -49,6 +61,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
         )
         drawer.addDrawerListener(toggle)
         toggle.syncState()
+
     }
 
     override fun onBackPressed() {

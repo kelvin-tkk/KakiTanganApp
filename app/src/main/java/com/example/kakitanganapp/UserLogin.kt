@@ -25,10 +25,13 @@ class UserLogin : AppCompatActivity(), TextView.OnEditorActionListener {
     private lateinit var btnLogin : Button
     private lateinit var editLoginEmail : EditText
     private lateinit var editLoginPassword : EditText
+    private lateinit var textSwitchLogin : TextView
+    private lateinit var textPassReset: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_login)
+
 
         auth = FirebaseAuth.getInstance()
         val loginUser = auth.currentUser
@@ -45,6 +48,18 @@ class UserLogin : AppCompatActivity(), TextView.OnEditorActionListener {
         editLoginEmail = findViewById(R.id.editLoginEmail)
         editLoginPassword = findViewById(R.id.editLoginPassword)
         editLoginPassword.setOnEditorActionListener(this)
+        textPassReset= findViewById(R.id.textPassReset)
+        textPassReset.setOnEditorActionListener(this)
+        textSwitchLogin = findViewById(R.id.textSwitchLogin)
+        textSwitchLogin.setOnEditorActionListener(this)
+
+        textSwitchLogin.setOnClickListener{
+            startActivity(Intent(this,AccRegister::class.java))
+        }
+
+        textPassReset.setOnClickListener{
+            startActivity(Intent(this,PasswordRetrieve::class.java))
+        }
 
         btnLogin.setOnClickListener{
             val userEmail = editLoginEmail.text.toString().trim()
