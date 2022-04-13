@@ -74,7 +74,7 @@ class UserAppointment : AppCompatActivity() , DatePickerDialog.OnDateSetListener
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         myHour = hourOfDay
         myMinute = minute
-        textView.text = "Confirmation*\n" + myDay + "/" + myMonth + "/" + myYear + " " + myHour + ":" + myMinute
+        textView.text = "" + myDay + "/" + myMonth + "/" + myYear + " " + myHour + ":" + myMinute
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
