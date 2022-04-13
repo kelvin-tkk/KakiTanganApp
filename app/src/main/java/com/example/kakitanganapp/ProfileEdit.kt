@@ -41,8 +41,6 @@ class ProfileEdit : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     private lateinit var locationCallback: LocationCallback
-    private var latitude: Double = 0.0
-    private var longitude: Double = 0.0
     private val permissionId = 2
 
     private lateinit var btnEPSave : Button
