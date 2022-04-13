@@ -41,7 +41,7 @@ class BookingHistory : AppCompatActivity(){
         // This loop will create 20 Views containing
         // the image with the count of view
         for (i in 1..5) {
-            data.add(Bookings(R.drawable.habibi, "Item ","bobo", Date(222222222) ))
+            data.add(Bookings(R.drawable.habibi, "Normal Clean","RM100", Date(222222222222) ))
         }
 
         // This will pass the ArrayList to our Adapter

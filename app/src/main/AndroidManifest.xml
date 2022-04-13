@@ -59,6 +59,18 @@
             android:name=".MainActivity"
             android:exported="true">
         </activity>
+        <activity android:name=".Payment"
+            android:exported="false"/>
+        <activity android:name=".CardDetail"
+            android:exported="false"/>
+        <activity android:name=".PaymentDetail1"
+            android:exported="false"/>
+        <activity android:name=".ConfirmPayment"
+            android:exported="false"/>
+        <activity android:name=".PaymentSuccessful"
+            android:exported="false"/>
+        <activity android:name=".PaymentFail"
+            android:exported="false"/>
     </application>
 
 </manifest>
