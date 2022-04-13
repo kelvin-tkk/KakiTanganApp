@@ -54,7 +54,7 @@ class UserAppointment : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
             textViewDateTime = findViewById(R.id.textView_datetime)
 
             val intent = Intent(this,Service::class.java)
-            intent.putExtra("DATETIME", textViewDateTime.text)
+            intent.putExtra("test", textViewDateTime.text)
             startActivity(intent)
         }
     }

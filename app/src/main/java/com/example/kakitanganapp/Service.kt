@@ -1,9 +1,11 @@
 package com.example.kakitanganapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +22,7 @@ class Service : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service)
 
-        dateTimeVal = intent.getStringExtra("DATETIME").toString()
+        val dateTimeVal1 = intent.getStringExtra("test")
 
         ttlService = findViewById(R.id.ttlService)
         setSupportActionBar(ttlService)
@@ -32,6 +34,8 @@ class Service : AppCompatActivity() {
 
         adapter = RecyclerAdapter(this)
         recyclerView.adapter = adapter
+
+        Toast.makeText(this, dateTimeVal1, Toast.LENGTH_SHORT).show()
     }
 
 

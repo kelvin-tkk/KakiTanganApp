@@ -53,11 +53,10 @@ class RecyclerAdapterMaid(val context: Context): RecyclerView.Adapter<RecyclerAd
             itemView.setOnClickListener {
                 val position: Int = adapterPosition
 
-                Toast.makeText(
-                    itemView.context,
-                    "You clicked on ${maids[position]}",
-                    Toast.LENGTH_LONG
-                ).show()
+                Toast.makeText(itemView.context,"You clicked on ${maids[position]}", Toast.LENGTH_LONG).show()
+
+                val intent = Intent(context, Payment::class.java)
+                context.startActivity(intent)
             }
         }
     }
