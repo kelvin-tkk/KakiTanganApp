@@ -76,13 +76,13 @@
                     app:layout_constraintTop_toBottomOf="@id/paymentServiceDate" />
 
                 <TextView
-                    android:id="@+id/paymentCusName"
+                    android:id="@+id/paymentMaidName"
                     android:layout_width="250dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginStart="20dp"
                     android:fontFamily="@font/roboto"
-                    android:text="Customer name"
+                    android:text="Maid name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +99,7 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/paymentCusName" />
+                    app:layout_constraintTop_toBottomOf="@id/paymentMaidName" />
 
                 <TextView
                     android:id="@+id/paymentPrice"
