@@ -19,56 +19,13 @@
         app:title="Our Service"
         app:titleTextColor="@color/white" />
 
-    <RadioGroup
-    android:id="@+id/serviceRadGroup"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginEnd="25dp"
-    android:orientation="horizontal"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/ttlService">
-
-    <RadioButton
-        android:id="@+id/radBtnNormal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
-        android:text="Normal Clean"
-        android:checked="true"
-        android:buttonTint="@color/teal_700"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <RadioButton
-        android:id="@+id/radBtnDeep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:fontFamily="@font/roboto"
-        android:text="Deep Clean"
-        android:buttonTint="@color/teal_700"
-        app:layout_constraintStart_toEndOf="@id/radBtnMale"/>
-
-        <RadioButton
-            android:id="@+id/radBtnDisinfection"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="Disinfection"
-            android:checked="true"
-            android:buttonTint="@color/teal_700"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-
-</RadioGroup>
+-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/serviceRadGroup">
+        app:layout_constraintTop_toBottomOf="@+id/ttlService">
 
         <ScrollView
             android:layout_width="match_parent"
