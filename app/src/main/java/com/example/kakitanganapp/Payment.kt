@@ -32,6 +32,7 @@ class Payment : AppCompatActivity() {
     lateinit var paymentMaidName: TextView
     lateinit var paymentServiceAddress: TextView
     lateinit var paymentPrice: TextView
+    private lateinit var paymentType: String
     private lateinit var dbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,11 +70,14 @@ class Payment : AppCompatActivity() {
 
 
         payCard.setOnClickListener {
+            paymentType = "card"
             val intent = Intent(this, CardDetail::class.java)
             intent.putExtra("servicePrice", servicePrice)
+            intent.putExtra("paymentType",paymentType)
             startActivity(intent)
         }
         payCOD.setOnClickListener {
+            paymentType = "cod"
             dbRef = Firebase.database.reference.child("Booking")
 
             val currBookingId = dbRef.push().key
@@ -84,6 +88,7 @@ class Payment : AppCompatActivity() {
 
             val intent = Intent(this, PaymentDetail1::class.java)
             intent.putExtra("bookingID", currBookingId)
+            intent.putExtra("paymentType",paymentType)
             startActivity(intent)
         }
 

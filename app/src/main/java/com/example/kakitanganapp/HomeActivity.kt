@@ -1,5 +1,6 @@
 package com.example.kakitanganapp
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -32,6 +33,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
     private lateinit var drawer : DrawerLayout
     private lateinit var btnBookNow : Button
     private lateinit var btnLogout : CardView
+    private lateinit var editor: SharedPreferences.Editor
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,14 +55,14 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
             finish()
         }
         else{
-            val sharedPref = applicationContext.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
+            sharedPref = applicationContext.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
             val userRef = Firebase.database.reference.child("User").child(auth.uid.toString())
             userRef.get().addOnSuccessListener {
 
                 currUser = it.getValue<User>()!!
 
                 //Initialising the Editor
-                val editor: SharedPreferences.Editor = sharedPref.edit()
+                editor = sharedPref.edit()
                 editor.putString("userName", currUser.name) // Storing string
                 editor.putString("userEmail", currUser.email) // Storing string
                 editor.putString("userAddress", currUser.address) // Storing string
@@ -136,6 +139,14 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
             }
             R.id.btnLogout -> {
                 val sharedPref = getSharedPreferences("prefKey", Context.MODE_PRIVATE)
+                editor.remove("userName"); // will delete key name
+                editor.remove("userEmail"); // will delete key email
+                editor.remove("userAddress"); // will delete key add
+
+                editor.commit(); // commit changes
+                //Following will clear all the data from shared preferences
+                editor.clear();
+                editor.commit(); // commit changes
                 with(sharedPref.edit()) {
                     putString("role", "")
                     apply()

@@ -20,17 +20,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ttlPaymentDetail1"
-        app:layout_constraintVertical_bias="0.138"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintTop_toBottomOf="@id/ttlPaymentDetail1"
+        >
 
         <TextView
             android:id="@+id/paymentSuccessful"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
@@ -44,7 +43,7 @@
         <TextView
             android:id="@+id/paymentCT"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
@@ -56,9 +55,9 @@
             app:layout_constraintTop_toBottomOf="@id/paymentSuccessful" />
 
         <TextView
-            android:id="@+id/paymentServiceDate"
+            android:id="@+id/paymentServiceDateTime"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
@@ -70,23 +69,9 @@
             app:layout_constraintTop_toBottomOf="@id/paymentCT" />
 
         <TextView
-            android:id="@+id/paymentServiceTime"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/roboto"
-            android:text="Cleaning Time"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/paymentServiceDate" />
-
-        <TextView
             android:id="@+id/paymentCusName"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
@@ -95,12 +80,12 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/paymentServiceTime" />
+            app:layout_constraintTop_toBottomOf="@id/paymentServiceDateTime" />
 
         <TextView
             android:id="@+id/paymentServiceAddress"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
@@ -114,7 +99,7 @@
         <TextView
             android:id="@+id/paymentPrice"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
@@ -124,5 +109,20 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/paymentServiceAddress" />
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConPayDetail"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back To Home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"  />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
