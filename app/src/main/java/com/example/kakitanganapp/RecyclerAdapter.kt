@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 class RecyclerAdapter(val context: Context, val appTime: String?): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private var titles = arrayOf("Normal Clean","Deep Clean","Disinfection")
-    private var details = arrayOf("RM 45/ hour","RM 75/ hour", "RM 70/ hour")
+    private var prices = arrayOf(90.0,150.0,140.0)
     private val images = intArrayOf(R.drawable.normal_clean,R.drawable.deep_clean,R.drawable.disinfection)
 
 
@@ -26,7 +26,7 @@ class RecyclerAdapter(val context: Context, val appTime: String?): RecyclerView.
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
         holder.itemTitle.text = titles[position]
-        holder.itemDetail.text = details[position]
+        holder.itemDetail.text = "RM " + prices[position] + "/ 2 hours"
         holder.itemImage.setImageResource(images[position])
     }
 
@@ -52,6 +52,7 @@ class RecyclerAdapter(val context: Context, val appTime: String?): RecyclerView.
                 val intent = Intent(context, MaidList::class.java)
                 intent.putExtra("appTime",appTime)
                 intent.putExtra("serviceType",titles[position])
+                intent.putExtra("servicePrice", prices[position])
                 context.startActivity(intent)
             }
         }

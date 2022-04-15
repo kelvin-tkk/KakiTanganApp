@@ -240,7 +240,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnMakeDonate"
+        android:id="@+id/btnCardPay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"

@@ -12,7 +12,7 @@ import androidx.appcompat.view.menu.MenuView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapterMaid(val context: Context, val appTime: String?, val serviceType: String?): RecyclerView.Adapter<RecyclerAdapterMaid.ViewHolder>() {
+class RecyclerAdapterMaid(val context: Context, val appTime: String?, val serviceType: String?, val servicePrice: Double?): RecyclerView.Adapter<RecyclerAdapterMaid.ViewHolder>() {
 
     private var maidsID = arrayOf(1,2,3,4)
     private var maids = arrayOf("Siti","Habibi","Lili", "Shankaria")
@@ -62,6 +62,7 @@ class RecyclerAdapterMaid(val context: Context, val appTime: String?, val servic
                 intent.putExtra("maidID",maidsID[position])
                 intent.putExtra("maidName",maids[position])
                 intent.putExtra("serviceType",serviceType)
+                intent.putExtra("servicePrice",servicePrice)
                 context.startActivity(intent)
             }
         }

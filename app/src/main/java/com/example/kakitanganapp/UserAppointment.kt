@@ -49,7 +49,7 @@ class UserAppointment : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
 
             val datePickerDialog =
                 DatePickerDialog(this@UserAppointment, this@UserAppointment, year, month, day)
-            datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis())
+            datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()+86400000)
             datePickerDialog.show()
         }
         buttonNext.setOnClickListener {

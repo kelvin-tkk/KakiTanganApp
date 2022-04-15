@@ -19,11 +19,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var currUser: User
     private lateinit var toolbar: Toolbar
     private lateinit var drawer : DrawerLayout
     private lateinit var btnBookNow : Button
@@ -46,6 +50,29 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
                 Intent(this,UserLogin::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             )
             finish()
+        }
+        else{
+            val sharedPref = applicationContext.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
+            val userRef = Firebase.database.reference.child("User").child(auth.uid.toString())
+            userRef.get().addOnSuccessListener {
+
+                currUser = it.getValue<User>()!!
+
+                //Initialising the Editor
+                val editor: SharedPreferences.Editor = sharedPref.edit()
+                editor.putString("userName", currUser.name) // Storing string
+                editor.putString("userEmail", currUser.email) // Storing string
+                editor.putString("userAddress", currUser.address) // Storing string
+                editor.commit() // commit changes
+
+            }.addOnFailureListener {
+                Toast.makeText(this, "Failure to retrieve session", Toast.LENGTH_LONG).show()
+                startActivity (
+                    Intent(
+                        this, UserLogin::class.java
+                    ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                )
+            }
         }
 
         toolbar = findViewById(R.id.toolbarHome)

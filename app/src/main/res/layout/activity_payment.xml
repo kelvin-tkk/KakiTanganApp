@@ -63,19 +63,6 @@
                     app:layout_constraintTop_toBottomOf="@id/paymentCT" />
 
                 <TextView
-                    android:id="@+id/paymentServiceTime"
-                    android:layout_width="250dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="Cleaning Time"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/paymentServiceDate" />
-
-                <TextView
                     android:id="@+id/paymentMaidName"
                     android:layout_width="250dp"
                     android:layout_height="45dp"
@@ -86,7 +73,7 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/paymentServiceTime" />
+                    app:layout_constraintTop_toBottomOf="@id/paymentServiceDate" />
 
                 <TextView
                     android:id="@+id/paymentServiceAddress"
@@ -105,22 +92,14 @@
                     android:id="@+id/paymentPrice"
                     android:layout_width="250dp"
                     android:layout_height="45dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/roboto"
                     android:text="Total Price"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/paymentServiceAddress" />
-
-
-
-
-
-
-
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ class MaidList : AppCompatActivity() {
 
         val dataService = intent.getStringExtra("serviceType")
         val dateTimeVal = intent.getStringExtra("appTime")
+        val servicePrice = intent.getDoubleExtra("servicePrice",0.0)
 
         ttlMaidList= findViewById(R.id.ttlMaidList)
         setSupportActionBar(ttlMaidList)
@@ -27,7 +28,7 @@ class MaidList : AppCompatActivity() {
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
-        adapter = RecyclerAdapterMaid(this,dateTimeVal, dataService)
+        adapter = RecyclerAdapterMaid(this,dateTimeVal, dataService, servicePrice)
         recyclerView.adapter = adapter
     }
 
