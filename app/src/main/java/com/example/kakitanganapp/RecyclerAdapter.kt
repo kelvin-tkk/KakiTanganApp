@@ -12,7 +12,7 @@ import androidx.appcompat.view.menu.MenuView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter(val context: Context): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(val context: Context, val appTime: String?): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private var titles = arrayOf("Normal Clean","Deep Clean","Disinfection")
     private var details = arrayOf("RM 45/ hour","RM 75/ hour", "RM 70/ hour")
@@ -47,9 +47,11 @@ class RecyclerAdapter(val context: Context): RecyclerView.Adapter<RecyclerAdapte
             itemView.setOnClickListener{
                 val position: Int = adapterPosition
 
-                Toast.makeText(itemView.context, "You clicked on ${titles[position]}", Toast.LENGTH_LONG).show()
+                Toast.makeText(itemView.context, "You have selected ${titles[position]}", Toast.LENGTH_LONG).show()
 
                 val intent = Intent(context, MaidList::class.java)
+                intent.putExtra("appTime",appTime)
+                intent.putExtra("serviceType",titles[position])
                 context.startActivity(intent)
             }
         }

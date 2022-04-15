@@ -22,7 +22,7 @@ class Service : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service)
 
-        val dateTimeVal1 = intent.getStringExtra("test")
+        val dateTimeVal = intent.getStringExtra("appTime")
 
         ttlService = findViewById(R.id.ttlService)
         setSupportActionBar(ttlService)
@@ -32,10 +32,10 @@ class Service : AppCompatActivity() {
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
-        adapter = RecyclerAdapter(this)
+        adapter = RecyclerAdapter(this,dateTimeVal)
         recyclerView.adapter = adapter
 
-        Toast.makeText(this, dateTimeVal1, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "You have selected " + dateTimeVal, Toast.LENGTH_SHORT).show()
     }
 
 

@@ -46,15 +46,17 @@ class UserAppointment : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
             day = calendar.get(Calendar.DAY_OF_MONTH)
             month = calendar.get(Calendar.MONTH)
             year = calendar.get(Calendar.YEAR)
+
             val datePickerDialog =
                 DatePickerDialog(this@UserAppointment, this@UserAppointment, year, month, day)
+            datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis())
             datePickerDialog.show()
         }
         buttonNext.setOnClickListener {
             textViewDateTime = findViewById(R.id.textView_datetime)
 
             val intent = Intent(this,Service::class.java)
-            intent.putExtra("test", textViewDateTime.text)
+            intent.putExtra("appTime", textViewDateTime.text)
             startActivity(intent)
         }
     }

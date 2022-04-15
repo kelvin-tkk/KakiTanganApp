@@ -16,6 +16,9 @@ class MaidList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maid_list)
 
+        val dataService = intent.getStringExtra("serviceType")
+        val dateTimeVal = intent.getStringExtra("appTime")
+
         ttlMaidList= findViewById(R.id.ttlMaidList)
         setSupportActionBar(ttlMaidList)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -24,7 +27,7 @@ class MaidList : AppCompatActivity() {
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
-        adapter = RecyclerAdapterMaid(this)
+        adapter = RecyclerAdapterMaid(this,dateTimeVal, dataService)
         recyclerView.adapter = adapter
     }
 
