@@ -15,6 +15,7 @@ import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Comment
 import java.sql.Date
 import java.time.LocalDate
 
@@ -43,25 +44,25 @@ class BookingHistory : AppCompatActivity(){
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
         // ArrayList of class ItemsViewModel
-        val data = ArrayList<Bookings>()
+        val data = ArrayList<Booking>()
 
         val sharedPref = applicationContext.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
         val userPhone = sharedPref.getString("userPhone",null)
 
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Booking").child(userPhone!!)
-        val myTopPostsQuery  = dbRef.orderByValue()
-        myTopPostsQuery.addValueEventListener(object : ValueEventListener {
+        dbRef = Firebase.database.reference.child("Booking").child(userPhone!!)
+        val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (singleSnapshot in dataSnapshot.children) {
-                    //data.add(singleSnapshot.getValue<Booking>())
-                }
+                // Get Post object and use the values to update the UI
+                var singleBook = dataSnapshot.getValue<Booking>()
+                // ...
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Getting Post failed, log a message
             }
-        })
+        }
+
 
 
         // This loop will create 20 Views containing
@@ -76,7 +77,6 @@ class BookingHistory : AppCompatActivity(){
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> onBackPressed()
