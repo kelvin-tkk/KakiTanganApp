@@ -16,7 +16,8 @@ class BookingAdapter(private val bookingList: ArrayList<Booking>) : RecyclerView
     override fun onBindViewHolder(holder: BookingAdapter.ViewHolder, position: Int) {
         val currentItem = bookingList[position]
         holder.image.setImageResource(R.drawable.maidlogo)
-        holder.address.text = currentItem.address
+        holder.price.text = "Price : RM" + currentItem.price
+        holder.address.text = "Address :" + currentItem.address
         holder.cleaningType.text = currentItem.cleaningType
         holder.cleaningDate.text = currentItem.cleaningDate.toString()
     }
