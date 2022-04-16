@@ -15,8 +15,8 @@ class BookingAdapter(private val bookingList: ArrayList<Booking>) : RecyclerView
 
     override fun onBindViewHolder(holder: BookingAdapter.ViewHolder, position: Int) {
         val currentItem = bookingList[position]
-        //holder.maidImage.setImageResource(currentItem.maidImage)
-        //holder.bookingId.text = currentItem.bookingId
+        holder.image.setImageResource(R.drawable.maidlogo)
+        holder.address.text = currentItem.address
         holder.cleaningType.text = currentItem.cleaningType
         holder.cleaningDate.text = currentItem.cleaningDate.toString()
     }
@@ -26,12 +26,10 @@ class BookingAdapter(private val bookingList: ArrayList<Booking>) : RecyclerView
     }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        //val maidImage : ImageView = itemView.findViewById(R.id.card_history_maid_image)
-        //val bookingId : TextView = itemView.findViewById(R.id.card_booking_id)
+        val image : ImageView = itemView.findViewById(R.id.card_history_image)
+        val price : TextView = itemView.findViewById(R.id.card_cleaning_price)
+        val address : TextView = itemView.findViewById(R.id.card_cleaning_add)
         val cleaningType : TextView = itemView.findViewById(R.id.card_cleaning_type)
         val cleaningDate : TextView = itemView.findViewById(R.id.card_cleaning_date)
-
-
-
     }
 }

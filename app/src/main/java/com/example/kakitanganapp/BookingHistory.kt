@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +17,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Comment
+import org.w3c.dom.Text
 import java.sql.Date
 import java.time.LocalDate
 
@@ -26,10 +28,8 @@ class BookingHistory : AppCompatActivity(){
     private lateinit var newArrayList : ArrayList<Bookings>
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<BookingAdapter.ViewHolder>? = null
-    lateinit var maidImages : Array<Int>
-    lateinit var bookingIds : Array<String>
-    lateinit var cleaningTypes : Array<String>
-    lateinit var cleaningDates : Array<Date>
+    private lateinit var testBox : TextView
+    val data = ArrayList<Booking>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,45 +38,76 @@ class BookingHistory : AppCompatActivity(){
         ttlHistory = findViewById(R.id.ttlHistory)
         setSupportActionBar(ttlHistory)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        testBox = findViewById(R.id.testBox)
 
         // getting the recyclerview by its id
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerViewHistory)
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
         // ArrayList of class ItemsViewModel
-        val data = ArrayList<Booking>()
 
         val sharedPref = applicationContext.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
         val userPhone = sharedPref.getString("userPhone",null)
 
 
         dbRef = Firebase.database.reference.child("Booking").child(userPhone!!)
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // Get Post object and use the values to update the UI
-                var singleBook = dataSnapshot.getValue<Booking>()
-                // ...
+
+        dbRef.addChildEventListener(object : ChildEventListener {
+
+            override fun onChildAdded(dataSnapshot: DataSnapshot, previousChildName: String?) {
+                /*
+                if (dataSnapshot.childrenCount > 0) {
+                    for ( ds1 :DataSnapshot in dataSnapshot.children) {
+                        var singleBook = dataSnapshot.getValue<Booking>()!!
+                        //data.add(Booking(singleBook!!.currBookingTime, singleBook!!.cleaningType,singleBook.cleaningDate, singleBook.maidID,singleBook.address,singleBook.price,singleBook.userEmail ))
+                        var time = singleBook!!.currBookingTime
+                        var type = singleBook!!.cleaningType
+                        var date = singleBook!!.cleaningDate
+                        var maidID = singleBook!!.maidID
+                        var add = singleBook!!.address
+                        var price = singleBook!!.price
+                        var email = singleBook!!.userEmail
+                    //data.add(Booking(time,type,date,maidID,add,price,email))
+                    }
+                }
+                */
+                    var singleBook = dataSnapshot.getValue<Booking>()!!
+                    var time = singleBook!!.currBookingTime
+                    var type = singleBook!!.cleaningType
+                    var date = singleBook!!.cleaningDate
+                    var maidID = singleBook!!.maidID
+                    var add = singleBook!!.address
+                    var price = singleBook!!.price
+                    var email = singleBook!!.userEmail
+                    data.add(Booking(time,type,date,maidID,add,price,email))
+
+                    val adapter = BookingAdapter(data)
+
+                    // Setting the Adapter with the recyclerview
+                    recyclerview.adapter = adapter
+            }
+
+            override fun onChildChanged(dataSnapshot: DataSnapshot, previousChildName: String?) {
+            }
+
+            override fun onChildRemoved(dataSnapshot: DataSnapshot) {
+            }
+
+            override fun onChildMoved(dataSnapshot: DataSnapshot, previousChildName: String?) {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Getting Post failed, log a message
             }
-        }
-
+        });
 
 
         // This loop will create 20 Views containing
         // the image with the count of view
         for (i in 1..5) {
-            //data.add(Bookings(R.drawable.habibi, "Normal Clean","RM100", Date(222222222222) ))
+            //data.add(Booking(0, "Normal Clean","RM100", "222222222222","",0.0,"" ))
         }
-
-        // This will pass the ArrayList to our Adapter
-        val adapter = BookingAdapter(data)
-
-        // Setting the Adapter with the recyclerview
-        recyclerview.adapter = adapter
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> onBackPressed()
