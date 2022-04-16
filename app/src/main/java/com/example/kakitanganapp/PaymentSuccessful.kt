@@ -24,7 +24,7 @@ class PaymentSuccessful : AppCompatActivity() {
         val userPhone = intent.getStringExtra("userPhone")
         val currTime = System.currentTimeMillis()
         val userAdd = intent.getStringExtra("userAdd")
-        val userEmail = intent.getStringExtra("userEmail")
+        val userEmail = intent.getStringExtra("userEmail")//
 
         val currBooking = Booking(currTime,
             dataService!!, dateTimeVal!!, maidID.toString(), userAdd!!, servicePrice, userEmail!!
