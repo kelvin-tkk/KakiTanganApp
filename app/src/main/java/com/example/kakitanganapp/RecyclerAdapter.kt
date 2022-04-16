@@ -47,7 +47,7 @@ class RecyclerAdapter(val context: Context, val appTime: String?): RecyclerView.
             itemView.setOnClickListener{
                 val position: Int = adapterPosition
 
-                Toast.makeText(itemView.context, "You have selected ${titles[position]}", Toast.LENGTH_LONG).show()
+                Toast.makeText(itemView.context, "You have selected ${titles[position]}", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(context, MaidList::class.java)
                 intent.putExtra("appTime",appTime)

@@ -54,7 +54,7 @@ class RecyclerAdapterMaid(val context: Context, val appTime: String?, val servic
             itemView.setOnClickListener {
                 val position: Int = adapterPosition
 
-                Toast.makeText(itemView.context,"You clicked on ${maids[position]}", Toast.LENGTH_LONG).show()
+                Toast.makeText(itemView.context,"You clicked on ${maids[position]}", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(context, Payment::class.java)
 

@@ -140,7 +140,7 @@ class ProfileEdit : AppCompatActivity(), View.OnClickListener {
                     finish();
                 }.addOnFailureListener{
                     Toast.makeText(
-                        this,"Something unexpected had occured, changes was not saveed", Toast.LENGTH_LONG).show()
+                        this,"Something unexpected had occured, changes was not saveed", Toast.LENGTH_SHORT).show()
 
                 }
             }

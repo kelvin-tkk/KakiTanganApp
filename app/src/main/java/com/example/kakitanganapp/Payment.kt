@@ -60,6 +60,7 @@ class Payment : AppCompatActivity() {
         paymentMaidName.text = "Maid : " + maidName
         val userAdd = sharedPref.getString("userAddress", null)
         val userEmail = sharedPref.getString("userEmail", null)
+        val userPhone = sharedPref.getString("userPhone",null)
         paymentServiceAddress.text = "Address : " + userAdd;
         paymentPrice.text = "Price : RM " + servicePrice.toString();
 
@@ -78,18 +79,19 @@ class Payment : AppCompatActivity() {
         }
         payCOD.setOnClickListener {
             paymentType = "cod"
-            dbRef = Firebase.database.reference.child("Booking")
+            val bookingID = Firebase.database.reference.child("Booking").child(userPhone!!).push().key
 
-            val currBookingId = dbRef.push().key
-            val ref1 = Firebase.database.reference.child("Booking").child(currBookingId.toString())
+            val ref1 = Firebase.database.reference.child("Booking").child(userPhone).child(bookingID.toString())
                 .setValue(currBooking).addOnSuccessListener {
                 Toast.makeText(this, "Booking is successful", Toast.LENGTH_SHORT).show()
             }
 
             val intent = Intent(this, PaymentDetail1::class.java)
-            intent.putExtra("bookingID", currBookingId)
+            intent.putExtra("bookingID", bookingID)
             intent.putExtra("paymentType",paymentType)
             startActivity(intent)
+
+
         }
 
     }

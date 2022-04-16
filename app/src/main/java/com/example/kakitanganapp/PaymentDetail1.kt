@@ -53,8 +53,9 @@ class PaymentDetail1 : AppCompatActivity() {
         }
 
         val sharedPref = applicationContext.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
+        val userPhone = sharedPref.getString("userPhone",null)
 
-        dbRef = Firebase.database.reference.child("Booking").child(bookingID!!)
+        dbRef = Firebase.database.reference.child("Booking").child(userPhone!!).child(bookingID!!)
         dbRef.get().addOnSuccessListener {
 
             completeBooking = it.getValue<Booking>()!!

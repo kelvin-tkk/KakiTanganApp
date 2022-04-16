@@ -66,6 +66,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener , NavigationView.
                 editor.putString("userName", currUser.name) // Storing string
                 editor.putString("userEmail", currUser.email) // Storing string
                 editor.putString("userAddress", currUser.address) // Storing string
+                editor.putString("userPhone", currUser.phoneNum) // Storing string
                 editor.commit() // commit changes
 
             }.addOnFailureListener {
