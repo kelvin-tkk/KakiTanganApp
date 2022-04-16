@@ -64,8 +64,8 @@ class Payment : AppCompatActivity() {
         paymentServiceAddress.text = "Address : " + userAdd;
         paymentPrice.text = "Price : RM " + servicePrice.toString();
 
-        val currBooking = Booking(
-            System.currentTimeMillis(),
+        val currTime = System.currentTimeMillis()
+        val currBooking = Booking(currTime,
             dataService!!, dateTimeVal!!, maidID.toString(), userAdd!!, servicePrice, userEmail!!
         );
 
@@ -75,6 +75,13 @@ class Payment : AppCompatActivity() {
             val intent = Intent(this, CardDetail::class.java)
             intent.putExtra("servicePrice", servicePrice)
             intent.putExtra("paymentType",paymentType)
+            intent.putExtra("userPhone",userPhone)
+            intent.putExtra("serviceType",dataService)
+            intent.putExtra("serviceTime",dateTimeVal)
+            intent.putExtra("maidID",maidID)
+            intent.putExtra("currTime",currTime)
+            intent.putExtra("userAdd",userAdd)
+            intent.putExtra("userEmail",userEmail)
             startActivity(intent)
         }
         payCOD.setOnClickListener {

@@ -6,18 +6,22 @@ import android.content.Intent
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.text.format.DateFormat
+import android.util.Patterns
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.TextView
-import android.widget.TimePicker
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import java.time.format.DateTimeFormatter
 import java.util.*
+import android.widget.TimePicker
+import android.widget.TimePicker.OnTimeChangedListener
+import androidx.appcompat.widget.Toolbar
+
 
 class UserAppointment : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener  {
+    private lateinit var tlbAppointment : Toolbar
     lateinit var textView: TextView
     lateinit var button: Button
     lateinit var buttonNext: Button
@@ -37,6 +41,9 @@ class UserAppointment : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_appointment)
 
+        tlbAppointment = findViewById(R.id.tlbAppointment)
+        setSupportActionBar(tlbAppointment)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         textView = findViewById(R.id.textView_datetime)
         button = findViewById(R.id.btnPick)
@@ -46,25 +53,32 @@ class UserAppointment : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
             day = calendar.get(Calendar.DAY_OF_MONTH)
             month = calendar.get(Calendar.MONTH)
             year = calendar.get(Calendar.YEAR)
-
             val datePickerDialog =
                 DatePickerDialog(this@UserAppointment, this@UserAppointment, year, month, day)
-            datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()+86400000)
+            datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() + 86400000)
             datePickerDialog.show()
         }
         buttonNext.setOnClickListener {
+
             textViewDateTime = findViewById(R.id.textView_datetime)
 
-            val intent = Intent(this,Service::class.java)
-            intent.putExtra("appTime", textViewDateTime.text)
-            startActivity(intent)
+            if(TextUtils.isEmpty(textViewDateTime.text)) {
+                Toast.makeText(
+                    this, "Invalid date and time",
+                    Toast.LENGTH_LONG
+                ).show()
+            }else {
+                val intent = Intent(this, Service::class.java)
+                intent.putExtra("appTime", textViewDateTime.text)
+                startActivity(intent)
+            }
         }
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        myDay = day
+        myDay = dayOfMonth
         myYear = year
-        myMonth = month
+        myMonth = month + 1
         val calendar: Calendar = Calendar.getInstance()
         hour = calendar.get(Calendar.HOUR)
         minute = calendar.get(Calendar.MINUTE)
@@ -76,6 +90,12 @@ class UserAppointment : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         myHour = hourOfDay
         myMinute = minute
+        OnTimeChangedListener { timePicker, hourOfDay, minute ->
+            if (hourOfDay < 8)
+                hour = 8
+            else if (hourOfDay > 16)
+                hour = 16
+        }
         textView.text = "" + myDay + "/" + myMonth + "/" + myYear + " " + myHour + ":" + myMinute
     }
 

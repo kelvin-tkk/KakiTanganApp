@@ -63,7 +63,7 @@
                     app:layout_constraintTop_toBottomOf="@id/txtConfirmAmount" />
 
                 <TextView
-                    android:id="@+id/txtDonateCardNo"
+                    android:id="@+id/txtCardNo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="42dp"
@@ -91,11 +91,11 @@
                     app:layout_constraintTop_toBottomOf="@id/txtConfirmCardNum" />
 
                 <TextView
-                    android:id="@+id/txtDonateDate"
+                    android:id="@+id/txtTransacDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="13dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="0dp"
                     android:layout_marginEnd="20dp"
                     android:fontFamily="@font/roboto"
                     android:text=""
@@ -103,39 +103,7 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/txtConfDate"
-                    app:layout_constraintTop_toBottomOf="@id/txtDonateCardNo" />
-
-                <TextView
-                    android:id="@+id/txtConfTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="Transaction Time :"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtConfDate" />
-
-                <TextView
-                    android:id="@+id/txtDonateTime"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:fontFamily="@font/roboto"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/txtConfTime"
-                    app:layout_constraintTop_toBottomOf="@id/txtDonateDate" />
-
-
-
-
+                    app:layout_constraintTop_toBottomOf="@id/txtCardNo" />
 
                 <TextView
                     android:id="@+id/textOTP"
@@ -148,7 +116,7 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtConfTime" />
+                    app:layout_constraintTop_toBottomOf="@id/txtConfDate" />
 
                 <EditText
                     android:id="@+id/editOTP"
@@ -166,7 +134,7 @@
                     android:textColor="@color/black"
                     android:textColorHint="#878787"
                     app:layout_constraintStart_toEndOf="@id/textOTP"
-                    app:layout_constraintTop_toBottomOf="@+id/txtDonateTime" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtTransacDate" />
 
                 <Button
                     android:id="@+id/btnConfirm"
