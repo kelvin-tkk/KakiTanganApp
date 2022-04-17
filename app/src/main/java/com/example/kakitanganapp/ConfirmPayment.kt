@@ -13,7 +13,6 @@ class ConfirmPayment : AppCompatActivity() {
     lateinit var txtAmtToPay: TextView
     lateinit var txtCardNo: TextView
     lateinit var date: TextView
-//    lateinit var time: TextView
     lateinit var confirm: Button
     lateinit var cancel: Button
 
@@ -28,11 +27,9 @@ class ConfirmPayment : AppCompatActivity() {
         val servicePrice = intent.getDoubleExtra("servicePrice", 0.0)
         val paymentType = intent.getStringExtra("paymentType")
         val dataService = intent.getStringExtra("serviceType")
-        val dateTimeVal = intent.getStringExtra("appTime")
-        val maidName = intent.getStringExtra("maidName")
-        val maidID = intent.getIntExtra("maidID", 0)
+        val dateTimeVal = intent.getStringExtra("serviceTime")
+        val maidID = intent.getStringExtra("maidID")
         val userPhone = intent.getStringExtra("userPhone")
-        val currTime = intent.getLongExtra("currTime",0)
         val userAdd = intent.getStringExtra("userAdd")
         val userEmail = intent.getStringExtra("userEmail")
         txtAmtToPay.text = "RM: " + intent.getDoubleExtra("servicePrice",0.0).toString()
@@ -45,21 +42,21 @@ class ConfirmPayment : AppCompatActivity() {
 
         date.text = formattedDate
 
-
         val sharedPref = applicationContext.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
 
         confirm = findViewById(R.id.btnConfirm)
         confirm.setOnClickListener {
             val intent = Intent(this,PaymentSuccessful::class.java)
+
             intent.putExtra("servicePrice", servicePrice)
             intent.putExtra("paymentType",paymentType)
             intent.putExtra("userPhone",userPhone)
             intent.putExtra("serviceType",dataService)
             intent.putExtra("serviceTime",dateTimeVal)
-            intent.putExtra("maidID",maidID.toString())
-            intent.putExtra("currTime",currTime)
+            intent.putExtra("maidID",maidID)
             intent.putExtra("userAdd",userAdd)
             intent.putExtra("userEmail",userEmail)
+
             startActivity(intent)
         }
 

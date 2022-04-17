@@ -79,7 +79,6 @@ class Payment : AppCompatActivity() {
             intent.putExtra("serviceType",dataService)
             intent.putExtra("serviceTime",dateTimeVal)
             intent.putExtra("maidID",maidID)
-            intent.putExtra("currTime",currTime)
             intent.putExtra("userAdd",userAdd)
             intent.putExtra("userEmail",userEmail)
             startActivity(intent)

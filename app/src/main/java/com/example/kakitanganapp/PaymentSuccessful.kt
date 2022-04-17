@@ -15,22 +15,23 @@ class PaymentSuccessful : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_successful)
 
+        successNxt = findViewById(R.id.btnSuccessNxt)
+
         val servicePrice = intent.getDoubleExtra("servicePrice", 0.0)
         val paymentType = intent.getStringExtra("paymentType")
         val dataService = intent.getStringExtra("serviceType")
-        val dateTimeVal = intent.getStringExtra("appTime")
-        val maidName = intent.getStringExtra("maidName")
-        val maidID = intent.getIntExtra("maidID", 0)
+        val dateTimeVal = intent.getStringExtra("serviceTime")
+        val maidID = intent.getStringExtra("maidID")
         val userPhone = intent.getStringExtra("userPhone")
         val currTime = System.currentTimeMillis()
         val userAdd = intent.getStringExtra("userAdd")
-        val userEmail = intent.getStringExtra("userEmail")//
+        val userEmail = intent.getStringExtra("userEmail")
+
 
         val currBooking = Booking(currTime,
-            dataService!!, dateTimeVal!!, maidID.toString(), userAdd!!, servicePrice, userEmail!!
-        );
-
-        successNxt = findViewById(R.id.btnSuccessNxt)
+            dataService.toString(),
+            dateTimeVal.toString(), maidID.toString(), userAdd.toString(), servicePrice, userEmail.toString()
+        )
 
         val bookingID = Firebase.database.reference.child("Booking").child(userPhone!!).push().key
 
@@ -39,14 +40,10 @@ class PaymentSuccessful : AppCompatActivity() {
                 Toast.makeText(this, "Booking is successful", Toast.LENGTH_SHORT).show()
             }
 
-        val intent = Intent(this, PaymentDetail1::class.java)
-        intent.putExtra("bookingID", bookingID)
-        intent.putExtra("paymentType",paymentType)
-        startActivity(intent)
-
         successNxt.setOnClickListener {
             val intent = Intent(this,PaymentDetail1::class.java)
             intent.putExtra("paymentType", paymentType)
+            intent.putExtra("bookingID", bookingID)
             startActivity(intent)
         }
     }

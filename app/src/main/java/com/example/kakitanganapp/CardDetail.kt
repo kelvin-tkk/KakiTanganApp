@@ -48,7 +48,7 @@ class CardDetail : AppCompatActivity(){
         val servicePrice = intent.getDoubleExtra("servicePrice", 0.0)
         val paymentType = intent.getStringExtra("paymentType")
         val dataService = intent.getStringExtra("serviceType")
-        val dateTimeVal = intent.getStringExtra("appTime")
+        val dateTimeVal = intent.getStringExtra("serviceTime")
         val maidName = intent.getStringExtra("maidName")
         val maidID = intent.getIntExtra("maidID", 0)
         val userPhone = intent.getStringExtra("userPhone")
@@ -112,7 +112,6 @@ class CardDetail : AppCompatActivity(){
                 sender.start()*/
                 val intent = Intent(this, ConfirmPayment::class.java)
                 intent.putExtra("cardNo", cardNo.substring(12))
-                /*intent.putExtra("otp",otpString)*/
                 intent.putExtra("servicePrice", servicePrice)
                 intent.putExtra("paymentType",paymentType)
                 intent.putExtra("userPhone",userPhone)
